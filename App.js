@@ -10,9 +10,10 @@ export default function App() {
   return (
     <View style={styles.containter}>
       {/* add1 */}
-      <Text style={{...styles.text, color: "green"}}>리액트 네이티브</Text>
+      <Text style={{...styles.text, color: "blue"} }>리액트 네이티브</Text>
       <Text style={styles.text}>리액트 네이티브</Text>
       {/* add2 */}
+      {/* <StatusBar backgroundColor="red" barStyle="dark-content" hidden={true} /> */}
       <StatusBar style="auto" />
     </View>
   );
