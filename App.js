@@ -8,17 +8,10 @@ export default function App() {
   const [number, setNumber] = useState(0);
   //add2
   return (
-    <View style={styles.container}>
+    <View style={styles.containter}>
       {/* add1 */}
-      {/* <Text>Open up App.js to start working on your app!</Text> */}
-      {/* add2 */}
-      {/* add1 */}
-      <Text style={{ fontSize: 50 }}>결과 : {number}</Text>
-      {/* [증가][감소] 이렇게 float가 됨 */}
-      <View style={{ flexDirection: "row", gap: 10 }}>
-        <Button title="증가" onPress={() => setNumber(number + 1)} />
-        <Button title="감소" onPress={() => setNumber(number - 1)} />
-      </View>
+      <Text style={{...styles.text, color: "green"}}>리액트 네이티브</Text>
+      <Text style={styles.text}>리액트 네이티브</Text>
       {/* add2 */}
       <StatusBar style="auto" />
     </View>
@@ -31,5 +24,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    fontSize: 50,
+    color: "green",
+    fontWeight: "bold",
   },
 });
