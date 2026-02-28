@@ -4,38 +4,16 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import React, {useState} from 'react';
 //add2
 export default function App() {
-  //add1
-  const [number, setNumber] = useState(0);
-  //add2
+  
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>결과 : {number}</Text>
-      <View style={styles.btnGroup}>
-        <Button 
-          style={styles.btn} 
-          title="증가" 
-          onPress={() => setNumber(number + 1)}/>
-        <Button 
-          style={styles.btn} 
-          title="감소" 
-          onPress={() => setNumber(number - 1)}/>
-      </View>
+    // flextDirection: "row" 하면 기존 빨,오,녹이 상>하였는데 좌>우로 됨 float처럼 둥둥 띄움
+    <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: "red" }}></View>
+      <View style={{ flex: 2, backgroundColor: "darkorange" }}></View>
+      <View style={{ flex: 2.5, backgroundColor: "green" }}></View>
       <Statusbar style="auto"/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 50,
-    fontWeight: "bold",
-  },
-  btnGroup: {
-    flexDirection: "row",
-    gap: 10,
-  },
-});
+const styles = StyleSheet.create({});
