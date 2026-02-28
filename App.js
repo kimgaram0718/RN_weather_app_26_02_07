@@ -8,27 +8,34 @@ export default function App() {
   const [number, setNumber] = useState(0);
   //add2
   return (
-    <View style={styles.containter}>
-      {/* add1 */}
-      <Text style={{...styles.text, color: "blue"} }>리액트 네이티브</Text>
-      <Text style={styles.text}>리액트 네이티브</Text>
-      {/* add2 */}
-      {/* <StatusBar backgroundColor="red" barStyle="dark-content" hidden={true} /> */}
-      <StatusBar style="auto" />
+    <View style={styles.container}>
+      <Text style={styles.text}>결과 : {number}</Text>
+      <View style={styles.btnGroup}>
+        <Button 
+          style={styles.btn} 
+          title="증가" 
+          onPress={() => setNumber(number + 1)}/>
+        <Button 
+          style={styles.btn} 
+          title="감소" 
+          onPress={() => setNumber(number - 1)}/>
+      </View>
+      <Statusbar style="auto"/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
     fontSize: 50,
-    color: "green",
     fontWeight: "bold",
+  },
+  btnGroup: {
+    flexDirection: "row",
+    gap: 10,
   },
 });
