@@ -1,17 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-//add1
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 import React, {useState} from 'react';
-//add2
 const App= () => {
-  
   return (
     // flextDirection: "row" 하면 기존 빨,오,녹이 상>하였는데 좌>우로 됨 float처럼 둥둥 띄움
     <View style={styles.container}>
       <View style={styles.cityCon}>
         <Text style={styles.city}>Ansan</Text>
       </View>
-      <View style={styles.weatherCon}>
+      <ScrollView horizontal contentContainerStyle={styles.wheather}>
+        <View style={styles.weatherInner}>
         <View style={styles.day}>
           <Text style={styles.regDate}>10월 13일, 일, 13:18</Text>
           <Text style={styles.desc}>맑음</Text>
@@ -19,8 +17,45 @@ const App= () => {
         <View style={styles.tempCon}>
           <Text style={styles.temp}>24</Text>
         </View>
-      </View>
-      <Statusbar style="auto"/>
+        </View>
+        <View style={styles.weatherCon}>
+          <View style={styles.day}>
+            <Text style={styles.regDate}>10월 13일, 일, 13:18</Text>
+            <Text style={styles.desc}>맑음</Text>
+          </View>
+          <View style={styles.tempCon}>
+            <Text style={styles.temp}>24</Text>
+          </View>
+        </View>
+        <View style={styles.weatherCon}>
+          <View style={styles.day}>
+            <Text style={styles.regDate}>10월 13일, 일, 13:18</Text>
+            <Text style={styles.desc}>맑음</Text>
+          </View>
+          <View style={styles.tempCon}>
+            <Text style={styles.temp}>24</Text>
+          </View>
+        </View>
+        <View style={styles.weatherCon}>
+          <View style={styles.day}>
+            <Text style={styles.regDate}>10월 13일, 일, 13:18</Text>
+            <Text style={styles.desc}>맑음</Text>
+          </View>
+          <View style={styles.tempCon}>
+            <Text style={styles.temp}>24</Text>
+          </View>
+        </View>
+        <View style={styles.weatherCon}>
+          <View style={styles.day}>
+            <Text style={styles.regDate}>10월 13일, 일, 13:18</Text>
+            <Text style={styles.desc}>맑음</Text>
+          </View>
+          <View style={styles.tempCon}>
+            <Text style={styles.temp}>24</Text>
+          </View>
+        </View>
+      </ScrollView>
+      <StatusBar style="auto"/>
     </View>
   );
 }
@@ -42,14 +77,16 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
-  weatherCon: {
+  weather: {
+    backgroundColor: "blue",
+  },
+  weatherInner: {
     flex: 3,
   },
   day: {
     flex: 0.2,
     backgroundColor: "green",
     textAlign: "center",
-    backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
   },
